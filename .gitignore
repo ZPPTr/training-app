@@ -1,0 +1,4 @@
+.idea
+docker/logs
+backend/var
+backend/vendor
