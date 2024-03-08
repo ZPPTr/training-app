@@ -8,6 +8,10 @@ run:
 run-cmd:
 	docker-compose run app-php-cli php bin/console $(Arguments)
 
+schema-update:
+	docker-compose run app-php-cli php bin/console cache:clear && docker-compose run app-php-cli php bin/console doctrine:schema:update -f -v && docker-compose run app-php-cli php bin/console cache:clear
+
+
 cache-clear:
 	docker-compose run app-php-cli php bin/console doctrine:cache:clear-metadata
 	docker-compose run app-php-cli php bin/console doctrine:cache:clear-result

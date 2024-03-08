@@ -15,6 +15,9 @@ doctrine:
         #server_version: '15'
 
         profiling_collect_backtrace: '%kernel.debug%'
+        types:
+            uuid: App\Infrastructure\Services\Doctrine\Types\UuIdType
+            email: App\Infrastructure\Services\Doctrine\Types\EmailType
     orm:
         auto_generate_proxy_classes: true
         enable_lazy_ghost_objects: true
